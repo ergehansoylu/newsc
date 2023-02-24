@@ -5,6 +5,7 @@ import { View, Text,Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import Ionicons from "@expo/vector-icons/Ionicons" ;
 
 const HomeScreen =({ navigation }) => {
   return (
@@ -127,8 +128,8 @@ const App =() => {
   return (
     <NavigationContainer>
     <Tabs.Navigator>
-    <Tabs.Screen name='ScreenView' component={ScreenView} options={{headerShown: false}}/>
-    <Tabs.Screen name='Screen2' component={Screen2} options={{headerShown: false}}/>
+    <Tabs.Screen name='ScreenView' component={ScreenView} options={{tabBarIcon: (props) => <Ionicons name='ios-home' {...props}/>,title:'Home' ,headerShown: false}}/>
+    <Tabs.Screen name='Screen2' component={Screen2} options={{tabBarIcon: (props) => <Ionicons name='ios-list' {...props}/>,title:'Item' ,headerShown: false}}/>
     
 
     </Tabs.Navigator>
